@@ -16,6 +16,10 @@ export class UserService {
     return this.userModel.findOne({ email });
   }
 
+  async findById(id: string): Promise<User | null> {
+    return this.userModel.findById(id).exec();
+  }
+
   async create(data: CreateUserDto, email: string, password: string, user: User): Promise<User> {
     const Createduser = new this.userModel(data, { email, password }, user);
 

@@ -3,6 +3,9 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class User extends Document {
+  static create(arg0: { email: string; password: any; }) {
+    throw new Error('Method not implemented.');
+  }
   @Prop({ required: true, unique: true })
   email: string;
 

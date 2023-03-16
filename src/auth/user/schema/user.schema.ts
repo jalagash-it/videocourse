@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class User extends Document {
-  static create(arg0: { email: string; password: any; }) {
+  static create(arg0: { email: string; password: any; }):Promise<User> {
     throw new Error('Method not implemented.');
   }
   @Prop({ required: true, unique: true })
